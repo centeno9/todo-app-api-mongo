@@ -1,0 +1,14 @@
+services:
+  db:
+    container_name: todo-app-db
+    image: mongo:5
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: todo-db
+    volumes:
+      - todo-app-mongo:/data/configdb
+
+volumes:
+  todo-app-mongo:
